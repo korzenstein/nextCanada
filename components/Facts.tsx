@@ -24,6 +24,7 @@ const Facts = ({ provChoice, langChoice, provData }) => {
   };
 
   return (
+    
     <div className="factsContainer">
       <div
         className={
@@ -63,7 +64,7 @@ const Facts = ({ provChoice, langChoice, provData }) => {
         </label>
       </div>
       <div className="factsData">
-        {provData?.[langChoice]?.map((item) => {
+        {provData[langChoice].map((item) => {
           return (
             <>
               {item[0] === provChoice ? (
@@ -73,7 +74,9 @@ const Facts = ({ provChoice, langChoice, provData }) => {
                       {item[1].facts[factChoice]?.name}
                     </h5>
                     <Image
-                      className="floraImage flasher"
+                      width={100}
+                      height={100}
+                      className="floraImage"
                       src={item[1].facts[factChoice]?.imageUrl}
                       alt={item[1].facts[factChoice]?.name}
                     />

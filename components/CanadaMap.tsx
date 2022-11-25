@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import {Fragment, useState} from 'react'
+import provComponents from "./provinces/provComponents";
 
 const pathVariants = {
   hidden: {
@@ -27,7 +28,7 @@ const pathVariants = {
 };
 
 
-const CanadaMap = ({ handleChoice, provChoice, provComponents }) => {
+const CanadaMap = ({ handleChoice, provChoice }) => {
   const [clicked, setClicked] = useState();
 
   const handleIndex = (index) => {
