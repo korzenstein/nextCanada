@@ -35,7 +35,7 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
     setClicked(index);
   };
   return (
-    <div className="mapContainer tester">
+    <div className="mapContainer h-full">
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         // width="422.184"
@@ -46,7 +46,7 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
         strokeLinecap="round"
         initial="hidden"
         animate="visible"
-        className="canadaMap"
+        className="canadaMap absolute"
       >
         <defs>
           <filter
@@ -80,7 +80,10 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
         {provComponents.map((item, index) => (
           <motion.g
             filter="url(#pencilTextureFilter)"
-            className={index === clicked ? "cssChange" : "default"}
+            className={index === clicked ? 
+              "fill-red-300 stroke-black stroke-1 cursor-pointer" 
+              : 
+              "fill-slate-200 stroke-black stroke-1 cursor-pointer"}
             id={index}
             key={index}
             variants={pathVariants}

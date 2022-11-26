@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Joanna Sans";
+  src: url("../components/assets/JoannaSansNovaRegular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Joanna Sans";
+  src: url("../components/assets/JoannaSansNovaThin.otf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Caledonia";
+  src: url("../components/assets/NewCaledoniaLTStdRg.otf");
+  font-weight: normal;
+}
+
 html,
 body {
   padding: 0;

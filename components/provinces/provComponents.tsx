@@ -14,20 +14,48 @@ import Yukon from "./Yukon";
 import Default from "./Default";
 
   const provComponents = [
-    <Alberta />,
-    <Bc />,
-    <Default />,
-    <Manitoba />,
-    <Nb />,
-    <Nfld />,
-    <Nova />,
-    <Nunavut />,
-    <Nwt />,
-    <Sask />,
-    <Ontario />,
-    <Pei />,
-    <Quebec />,
-    <Yukon />,
+    <Alberta
+    key={"Alberta"}
+     />,
+    <Bc
+    key={"Alberta"}
+     />,
+    <Default
+    key={"Default"}
+     />,
+    <Manitoba
+    key={"Manitoba"}
+     />,
+    <Nb
+    key={"Nb"}
+     />,
+    <Nfld
+    key={"Nfld"}
+     />,
+    <Nova
+    key={"Nova"}
+     />,
+    <Nunavut
+    key={"Nunavut"}
+     />,
+    <Nwt
+    key={"Nwt"}
+    />,
+    <Sask
+    key={"Sask"}
+    />,
+    <Ontario
+    key={"Ontario"}
+    />,
+    <Pei
+    key={"Pei"}
+    />,
+    <Quebec
+    key={"Quebec"}
+    />,
+    <Yukon
+    key={"Yukon"}
+    />,
   ];
 
   export default provComponents

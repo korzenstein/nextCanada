@@ -4,15 +4,20 @@ import Facts from "../components/Facts";
 import Flags from "../components/Flags";
 import Title from "../components/Title";
 import Languages from "../components/Languages";
-
 import { useState } from "react";
+import { GetStaticProps } from 'next' 
+
+// interface ProvData {
+//   english: Array<{}>
+
+// }
 
 export default function Home({ provData }) {
   const [provChoice, setProvChoice] = useState("nfld");
   const [flagToggle, setFlagToggle] = useState(false);
   const [langChoice, setLangChoice] = useState("english");
 
-  const handleChoice = (province) => {
+  const handleChoice = (province: string) => {
     setProvChoice(province.toLowerCase());
     setFlagToggle(false);
   };
@@ -21,7 +26,7 @@ export default function Home({ provData }) {
     setFlagToggle(!flagToggle);
   };
 
-  const languageHandler = (language) => {
+  const languageHandler = (language: string) => {
     setLangChoice(language);
   };
 
@@ -34,7 +39,7 @@ export default function Home({ provData }) {
       </Head>
 
       <main className="main">
-        <div className="wrapper">
+        <div className="wrapper ">
           {provData !== undefined ? (
             <>
               <Facts {...{ provChoice, langChoice, provData }} />
@@ -45,7 +50,7 @@ export default function Home({ provData }) {
             </>
           ) : null}
 
-          <footer className="footer">
+          <footer className="footer absolute bottom-0">
             <p>designed + developed by Stephen Korzenstein 2022</p>
           </footer>
         </div>
@@ -54,7 +59,7 @@ export default function Home({ provData }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
     "https://api.jsonbin.io/v3/b/62ce084a4d5b061b1b4afdff"
   );
