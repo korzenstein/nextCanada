@@ -1,16 +1,16 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FunctionComponent } from "react";
+// import { FunctionComponent } from "react";
 
 
-interface Props {
-  provChoice?: string;
-  langChoice: string;
-  provData: any;
-  factChoice: string;
-}
+// interface Props {
+//   provChoice?: string;
+//   langChoice: string;
+//   provData: any;
+//   factChoice: string;
+// }
 
-const Images: FunctionComponent<Props> = ({
+const Images = ({
   provChoice,
   langChoice,
   provData,
@@ -22,7 +22,7 @@ const Images: FunctionComponent<Props> = ({
         return (
           <>
             {item[0] === provChoice ? (
-              <div key={item} className="dataSet w-full">
+              <div key={index} className="dataSet w-full">
                 <div className="floraImageContainer relative w-full pointer-events-auto">
                   <h5
                     className="
@@ -35,13 +35,14 @@ const Images: FunctionComponent<Props> = ({
                     {item[1].facts[factChoice]?.name}
                   </h5>
                     <motion.span
-                      key={index}
+          
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{duration: 0.9}}
                     >
                       <Image
+                        key={item[1].facts[factChoice]?.name}
                         width={200}
                         height={200}
                         className="floraImage 
@@ -52,7 +53,7 @@ const Images: FunctionComponent<Props> = ({
                       rounded-2xl
                       "
                         src={item[1].facts[factChoice]?.imageUrl}
-                        alt={item[1].facts[factChoice]?.name}
+                        alt={item[1].facts[factChoice]?.name || `unique picure`}
                       />
                     </motion.span>
                 </div>

@@ -10,7 +10,7 @@ const Flags = ({ provChoice, provData, flagHandler, langChoice }) => {
             {item[0] === provChoice ? (
               <div key={index} className="flagImageContainer w-1/3 ml-auto">
                   <motion.span
-                    key={index}
+                    
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
