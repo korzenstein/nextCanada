@@ -18,7 +18,7 @@ import Default from "./Default";
     key={"Alberta"}
      />,
     <Bc
-    key={"Alberta"}
+    key={"Bc"}
      />,
     <Default
     key={"Default"}

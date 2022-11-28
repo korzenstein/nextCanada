@@ -4,9 +4,9 @@ import Facts from "../components/Facts";
 import Flags from "../components/Flags";
 import Title from "../components/Title";
 import Languages from "../components/Languages";
-import { useState, Fragment } from "react";
+import { useState } from "react";
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async () => {
   const res = await fetch(
     "https://api.jsonbin.io/v3/b/62ce084a4d5b061b1b4afdff"
   );
@@ -45,37 +45,12 @@ export default function Home({ provData }) {
       <main className="main">
         <div className="wrapper ">
           <CanadaMap {...{ handleChoice, provChoice }} />
-
           <Title {...{ provChoice, langChoice, provData }} />
-
           <Flags {...{ provChoice, langChoice, provData }} />
           <Facts {...{ provChoice, langChoice, provData }} />
-
           <Languages {...{ languageHandler }} />
-
-          
           <footer className="footer w-full border-t-2 absolute bottom-0 text-sm py-0.5">
-            <p className="text-center">
-              designed + developed by Stephen K 2022
-              {provChoice}
-              </p>
-          
-            
-        
- {/* {provData[langChoice].map((item, index) => {
-          return (
-            <Fragment key={index}>
-              {item[0] === provChoice ? (
-                <>
-                  <h2 className=" w-auto text-2xl my-4">{item[1].province}</h2>
-                  
-                </>
-              ) : null}
-            </Fragment>
-          );
-        })} */}
-              
-        
+            <p className="text-center">designed + developed by Stephen K 2022</p>
           </footer>
         </div>
       </main>

@@ -36,7 +36,7 @@ const Images = ({ provChoice, langChoice, provData, factChoice }) => {
                       -bottom-40
                       -right-8
                       rounded-2xl
-                      w-auto
+                      w-full
                       h-auto
                       "
                       src={item[1].facts[factChoice].imageUrl}

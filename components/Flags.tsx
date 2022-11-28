@@ -18,12 +18,11 @@ const Flags = ({ provChoice, provData, langChoice }) => {
                   >
                     <Image
                       width={1000}
-                      height={500}
+                      height={1000}
                       className="
                       flag 
                       rounded-1
-                      w-auto
-                      h-auto
+                      
                       "
                       src={item[1].flag.imageUrl}
                       alt={`flag of ${provChoice}`}

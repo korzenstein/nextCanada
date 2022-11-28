@@ -27,7 +27,7 @@ const pathVariants = {
   },
 };
 
-const CanadaMap = ({ handleChoice, provChoice }) => {
+const CanadaMap = ({ handleChoice }) => {
   const [clicked, setClicked] = useState();
 
   const handleIndex = (index) => {
@@ -37,10 +37,6 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
     <div className="mapContainer h-full">
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        // width="422.184"
-        //  height="393.381"
-        // width="auto"
-        // height="auto"
         viewBox="-200 -20 700 500"
         strokeLinecap="round"
         initial="hidden"
@@ -50,8 +46,6 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
         <defs>
           <filter
             id="pencilTextureFilter"
-            // width="100%"
-            // height="100%"
             x="0%"
             y="0%"
             filterUnits="objectBoundingBox"
@@ -81,18 +75,16 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
             filter="url(#pencilTextureFilter)"
             className={
               index === clicked
-                ? "fill-red-300 stroke-black stroke-1 cursor-pointer"
-                : "fill-slate-200 stroke-black stroke-1 cursor-pointer"
+                ? "fill-red-300 stroke-black stroke-1 cursor-pointer transition-all"
+                : "fill-slate-200 stroke-black stroke-1 cursor-pointer transition-all"
             }
             id={index}
             key={index}
             variants={pathVariants}
-            // whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
             onClick={() => {
               handleChoice(item.key);
-              console.log("here", item.key)
-              console.log(item.type.name)
+              console.log(item.key)
               handleIndex(index);
             }}
           >

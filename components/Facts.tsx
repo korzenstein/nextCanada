@@ -10,7 +10,6 @@ const Facts = ({ provChoice, langChoice, provData }) => {
 
   const handleFacts = (e) => {
     setFactChoice(e.target.value);
-    
   };
 
   return (
@@ -26,14 +25,20 @@ const Facts = ({ provChoice, langChoice, provData }) => {
     z-20"
     >
       <Radios
-        {...{ provChoice, langChoice, provData, radioArray, handleFacts, factChoice }}
+        {...{
+          provChoice,
+          langChoice,
+          provData,
+          radioArray,
+          handleFacts,
+          factChoice,
+        }}
       />
-     {/* { factChoice !== undefined ?
-     <Images
-        {...{ provChoice, langChoice, provData, radioArray, factChoice }}
-      />
-      : null
-      } */}
+      {factChoice !== undefined ? (
+        <Images
+          {...{ provChoice, langChoice, provData, radioArray, factChoice }}
+        />
+      ) : null}
     </div>
   );
 };
