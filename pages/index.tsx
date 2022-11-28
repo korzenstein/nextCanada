@@ -25,6 +25,8 @@ export default function Home({ provData }) {
     setLangChoice(language);
   };
 
+  console.log('first log')
+  console.log(provData)
   return (
     <div>
       <Head>
