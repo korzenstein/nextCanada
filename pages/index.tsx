@@ -34,7 +34,8 @@ export default function Home({ provData }) {
     setLangChoice(language);
   };
 
-  console.log(provData[langChoice].map(item => item[0] === provChoice ? provChoice : provChoice))
+  console.log(provData)
+  console.log(provData[langChoice].map(item => item[0] === provChoice ? item[0] : "nothing"))
   return (
     <div>
       <Head>
