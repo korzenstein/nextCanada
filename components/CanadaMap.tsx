@@ -40,8 +40,8 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
         xmlns="http://www.w3.org/2000/svg"
         // width="422.184"
         //  height="393.381"
-        width="auto"
-        height="auto"
+        // width="auto"
+        // height="auto"
         viewBox="-200 -20 700 500"
         strokeLinecap="round"
         initial="hidden"
@@ -51,8 +51,8 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
         <defs>
           <filter
             id="pencilTextureFilter"
-            width="100%"
-            height="100%"
+            // width="100%"
+            // height="100%"
             x="0%"
             y="0%"
             filterUnits="objectBoundingBox"
