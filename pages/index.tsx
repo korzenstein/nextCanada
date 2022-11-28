@@ -4,7 +4,7 @@ import Facts from "../components/Facts";
 import Flags from "../components/Flags";
 import Title from "../components/Title";
 import Languages from "../components/Languages";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 
 export const getStaticProps = async (context) => {
   const res = await fetch(
@@ -34,8 +34,7 @@ export default function Home({ provData }) {
     setLangChoice(language);
   };
 
-  console.log(provData)
-  console.log(provData[langChoice].map(item => item[0]))
+  console.log(provData[langChoice].map(item => item[0] === provChoice ? provChoice : provChoice))
   return (
     <div>
       <Head>
@@ -59,8 +58,23 @@ export default function Home({ provData }) {
           <footer className="footer w-full border-t-2 absolute bottom-0 text-sm py-0.5">
             <p className="text-center">
               designed + developed by Stephen K 2022
-              {provData[langChoice][1][1].province}
-            </p>
+              </p>
+          
+            
+        
+ {provData[langChoice].map((item, index) => {
+          return (
+            <Fragment key={index}>
+              {item[0] === provChoice ? (
+                <>
+                  <h2 className=" w-auto text-2xl my-4">{item[1].province}</h2>
+                  
+                </>
+              ) : null}
+            </Fragment>
+          );
+        })}
+              
         
           </footer>
         </div>
