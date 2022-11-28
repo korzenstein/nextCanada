@@ -28,12 +28,12 @@ const Facts = ({ provChoice, langChoice, provData }) => {
       <Radios
         {...{ provChoice, langChoice, provData, radioArray, handleFacts, factChoice }}
       />
-     { factChoice !== undefined ?
+     {/* { factChoice !== undefined ?
      <Images
         {...{ provChoice, langChoice, provData, radioArray, factChoice }}
       />
       : null
-      }
+      } */}
     </div>
   );
 };

@@ -52,7 +52,7 @@ export default function Home({ provData }) {
           <Languages {...{ languageHandler }} />
           <Title {...{ provChoice, langChoice, provData }} />
           <CanadaMap {...{ handleChoice, provChoice }} />
-          <Flags {...{ provChoice, langChoice, provData, flagHandler }} />
+          {/* <Flags {...{ provChoice, langChoice, provData, flagHandler }} /> */}
 
           <footer className="footer w-full border-t-2 absolute bottom-0 text-sm py-0.5">
             <p className="text-center">
