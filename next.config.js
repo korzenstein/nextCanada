@@ -7,11 +7,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/',
+        source: '/(.*)',
         headers: [
           {
             key: 'X-Master-Key',
-            value: process.env.NEXT_PUBLIC_API_KEY,
+            value: process.env.API_KEY,
           },
         ],
       },
