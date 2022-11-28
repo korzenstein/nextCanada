@@ -19,7 +19,12 @@ const Flags = ({ provChoice, provData, flagHandler, langChoice }) => {
                     <Image
                       width={1000}
                       height={500}
-                      className="flag rounded-1"
+                      className="
+                      flag 
+                      rounded-1
+                      w-auto
+                      h-auto
+                      "
                       onClick={() => {
                         flagHandler();
                       }}
