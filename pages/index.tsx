@@ -5,7 +5,6 @@ import Flags from "../components/Flags";
 import Title from "../components/Title";
 import Languages from "../components/Languages";
 import { useState } from "react";
-import { GetStaticProps } from 'next' 
 
 export default function Home({ provData }) {
   const [provChoice, setProvChoice] = useState("");
@@ -25,8 +24,7 @@ export default function Home({ provData }) {
     setLangChoice(language);
   };
 
-  console.log('first log')
-  console.log(provData)
+  
   return (
     <div>
       <Head>
@@ -56,7 +54,7 @@ export default function Home({ provData }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch(
     "https://api.jsonbin.io/v3/b/62ce084a4d5b061b1b4afdff"
   );
