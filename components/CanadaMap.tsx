@@ -90,7 +90,9 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
             // whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
             onClick={() => {
-              handleChoice(item.type.name);
+              handleChoice(item.key);
+              console.log("here", item.key)
+              console.log(item.type.name)
               handleIndex(index);
             }}
           >
