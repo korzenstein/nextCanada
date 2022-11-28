@@ -34,6 +34,8 @@ export default function Home({ provData }) {
     setLangChoice(language);
   };
 
+  console.log(provData)
+  console.log(provData[langChoice].map(item => item[0]))
   return (
     <div>
       <Head>
@@ -44,16 +46,22 @@ export default function Home({ provData }) {
 
       <main className="main">
         <div className="wrapper ">
-          {/* <Facts {...{ provChoice, langChoice, provData }} /> */}
-          <Languages {...{ languageHandler }} />
-          <Title {...{ provChoice, langChoice, provData }} />
           <CanadaMap {...{ handleChoice, provChoice }} />
-          {/* <Flags {...{ provChoice, langChoice, provData }} /> */}
 
+          <Title {...{ provChoice, langChoice, provData }} />
+
+          <Flags {...{ provChoice, langChoice, provData }} />
+          <Facts {...{ provChoice, langChoice, provData }} />
+
+          <Languages {...{ languageHandler }} />
+
+          
           <footer className="footer w-full border-t-2 absolute bottom-0 text-sm py-0.5">
             <p className="text-center">
               designed + developed by Stephen K 2022
+              {provData[langChoice][1][1].province}
             </p>
+        
           </footer>
         </div>
       </main>
