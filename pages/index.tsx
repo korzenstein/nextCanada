@@ -6,7 +6,7 @@ import Title from "../components/Title";
 import Languages from "../components/Languages";
 import { useState } from "react";
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (context) => {
   const res = await fetch(
     "https://api.jsonbin.io/v3/b/62ce084a4d5b061b1b4afdff"
   );
@@ -30,10 +30,6 @@ export default function Home({ provData }) {
     setFlagToggle(false);
   };
 
-  const flagHandler = () => {
-    setFlagToggle(!flagToggle);
-  };
-
   const languageHandler = (language: string) => {
     setLangChoice(language);
   };
@@ -48,11 +44,11 @@ export default function Home({ provData }) {
 
       <main className="main">
         <div className="wrapper ">
-          <Facts {...{ provChoice, langChoice, provData }} />
+          {/* <Facts {...{ provChoice, langChoice, provData }} /> */}
           <Languages {...{ languageHandler }} />
           <Title {...{ provChoice, langChoice, provData }} />
           <CanadaMap {...{ handleChoice, provChoice }} />
-          {/* <Flags {...{ provChoice, langChoice, provData, flagHandler }} /> */}
+          {/* <Flags {...{ provChoice, langChoice, provData }} /> */}
 
           <footer className="footer w-full border-t-2 absolute bottom-0 text-sm py-0.5">
             <p className="text-center">

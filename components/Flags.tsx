@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Fragment } from "react";
 import Image from "next/image";
 
-const Flags = ({ provChoice, provData, flagHandler, langChoice }) => {
+const Flags = ({ provChoice, provData, langChoice }) => {
   return (
     <div className="flagsContainer absolute top-12 right-0 pointer-events-none">
       {provData[langChoice].map((item, index) => {
@@ -25,9 +25,6 @@ const Flags = ({ provChoice, provData, flagHandler, langChoice }) => {
                       w-auto
                       h-auto
                       "
-                      onClick={() => {
-                        flagHandler();
-                      }}
                       src={item[1].flag.imageUrl}
                       alt={`flag of ${provChoice}`}
                     />
