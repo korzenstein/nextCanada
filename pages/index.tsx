@@ -59,11 +59,12 @@ export default function Home({ provData }) {
           <footer className="footer w-full border-t-2 absolute bottom-0 text-sm py-0.5">
             <p className="text-center">
               designed + developed by Stephen K 2022
+              {provChoice}
               </p>
           
             
         
- {provData[langChoice].map((item, index) => {
+ {/* {provData[langChoice].map((item, index) => {
           return (
             <Fragment key={index}>
               {item[0] === provChoice ? (
@@ -74,7 +75,7 @@ export default function Home({ provData }) {
               ) : null}
             </Fragment>
           );
-        })}
+        })} */}
               
         
           </footer>
