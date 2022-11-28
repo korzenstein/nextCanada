@@ -8,7 +8,7 @@ import { useState } from "react";
 import { GetStaticProps } from 'next' 
 
 export default function Home({ provData }) {
-  const [provChoice, setProvChoice] = useState("nfld");
+  const [provChoice, setProvChoice] = useState("");
   const [flagToggle, setFlagToggle] = useState(false);
   const [langChoice, setLangChoice] = useState("english");
 
@@ -45,8 +45,8 @@ export default function Home({ provData }) {
             </>
           ) : null}
 
-          <footer className="footer absolute bottom-0">
-            <p>designed + developed by Stephen Korzenstein 2022</p>
+          <footer className="footer w-full border-t-2 absolute bottom-0 text-sm py-0.5">
+            <p className="text-center">designed + developed by Stephen Korzenstein 2022</p>
           </footer>
         </div>
       </main>

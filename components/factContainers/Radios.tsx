@@ -1,3 +1,5 @@
+import {Fragment} from 'react'
+
 const Radios = ({ provChoice, factChoice, radioArray, handleFacts }) => {
   return (
     <div
@@ -8,7 +10,7 @@ const Radios = ({ provChoice, factChoice, radioArray, handleFacts }) => {
       }
     >
       {radioArray.map((rdo, index) => (
-        <div key={index}>
+        <Fragment key={index}>
           <input
             
             className="hidden"
@@ -29,7 +31,7 @@ const Radios = ({ provChoice, factChoice, radioArray, handleFacts }) => {
           >
             {rdo[1]}
           </label>
-        </div>
+        </Fragment>
       ))}
     </div>
   );

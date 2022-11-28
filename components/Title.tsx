@@ -1,3 +1,5 @@
+import {Fragment} from 'react'
+
 const Title = ({ provChoice, provData, langChoice }) => {
   const titleLang = {
     english: {
@@ -20,10 +22,10 @@ const Title = ({ provChoice, provData, langChoice }) => {
       <h1
       className="p-0 m-0 text-3xl"
       >{titleLang?.[langChoice]?.title}</h1>
-      <div className="title gap-2 flex flex-col">
+      <div className="title gap-2 flex flex-col justify-start">
         {provData?.[langChoice]?.map((item, index) => {
           return (
-            <div key={index}>
+            <Fragment key={index}>
               {item[0] === provChoice ? (
                 <>
                   <h2 className=" w-auto text-2xl my-4">{item[1].province}</h2>
@@ -38,7 +40,7 @@ const Title = ({ provChoice, provData, langChoice }) => {
                   <h6 className="subInfo p-0 text-lg">{item[1].capital}</h6>
                 </>
               ) : null}
-            </div>
+            </Fragment>
           );
         })}
       </div>

@@ -4,7 +4,7 @@ import Images from "./factContainers/Images";
 import { radioData } from "./factContainers/radioData.ts";
 
 const Facts = ({ provChoice, langChoice, provData }) => {
-  const [factChoice, setFactChoice] = useState([]);
+  const [factChoice, setFactChoice] = useState();
 
   const radioArray = Object.entries(radioData[langChoice]);
 
@@ -28,9 +28,12 @@ const Facts = ({ provChoice, langChoice, provData }) => {
       <Radios
         {...{ provChoice, langChoice, provData, radioArray, handleFacts, factChoice }}
       />
-      <Images
+     { factChoice !== undefined ?
+     <Images
         {...{ provChoice, langChoice, provData, radioArray, factChoice }}
       />
+      : null
+      }
     </div>
   );
 };
