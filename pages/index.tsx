@@ -7,11 +7,6 @@ import Languages from "../components/Languages";
 import { useState } from "react";
 import { GetStaticProps } from 'next' 
 
-// interface ProvData {
-//   english: Array<{}>
-
-// }
-
 export default function Home({ provData }) {
   const [provChoice, setProvChoice] = useState("nfld");
   const [flagToggle, setFlagToggle] = useState(false);
