@@ -5,7 +5,7 @@ import Image from "next/image";
 const Flags = ({ provChoice, provData, flagHandler, langChoice }) => {
   return (
     <div className="flagsContainer absolute top-12 right-0 pointer-events-none">
-      {provData?.[langChoice]?.map((item, index) => {
+      {provData.[langChoice].map((item, index) => {
         return (
           <Fragment key={`div${index}`}>
             {item[0] === provChoice ? (
@@ -28,7 +28,7 @@ const Flags = ({ provChoice, provData, flagHandler, langChoice }) => {
                       onClick={() => {
                         flagHandler();
                       }}
-                      src={item[1]?.flag?.imageUrl}
+                      src={item[1].flag.imageUrl}
                       alt={`flag of ${provChoice}`}
                     />
                   </motion.span>

@@ -19,7 +19,7 @@ const Images = ({ provChoice, langChoice, provData, factChoice }) => {
                     w-full
                     subtitle"
                   >
-                    {item[1].facts[factChoice]?.name}
+                    {item[1].facts[factChoice].name}
                   </h5>
                   <motion.span
                     initial={{ opacity: 0 }}
@@ -39,8 +39,8 @@ const Images = ({ provChoice, langChoice, provData, factChoice }) => {
                       w-auto
                       h-auto
                       "
-                      src={item[1].facts[factChoice]?.imageUrl}
-                      alt={item[1].facts[factChoice]?.name}
+                      src={item[1].facts[factChoice].imageUrl}
+                      alt={item[1].facts[factChoice].name}
                     />
                   </motion.span>
                 </div>

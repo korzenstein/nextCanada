@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import {Fragment, useState} from 'react'
+import { Fragment, useState } from "react";
 import provComponents from "./provinces/provComponents";
 
 const pathVariants = {
@@ -26,7 +26,6 @@ const pathVariants = {
     // },
   },
 };
-
 
 const CanadaMap = ({ handleChoice, provChoice }) => {
   const [clicked, setClicked] = useState();
@@ -80,69 +79,24 @@ const CanadaMap = ({ handleChoice, provChoice }) => {
         {provComponents.map((item, index) => (
           <motion.g
             filter="url(#pencilTextureFilter)"
-            className={index === clicked ? 
-              "fill-red-300 stroke-black stroke-1 cursor-pointer" 
-              : 
-              "fill-slate-200 stroke-black stroke-1 cursor-pointer"}
+            className={
+              index === clicked
+                ? "fill-red-300 stroke-black stroke-1 cursor-pointer"
+                : "fill-slate-200 stroke-black stroke-1 cursor-pointer"
+            }
             id={index}
             key={index}
             variants={pathVariants}
             // whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.1 }}
             onClick={() => {
-              handleChoice(item.type.name)
-              handleIndex(index)
+              handleChoice(item.type.name);
+              handleIndex(index);
             }}
           >
             <Fragment key={index}>{item}</Fragment>
           </motion.g>
         ))}
-
-        
-          
-    
-        
-          
-          
-     
-          
-         
-          
-          
-          
-         
-        
-          
-          {/* <motion.path
-          whileTap={{ scale: 1.3 }}
-            onClick={() => {
-              handleChoice("nunavut");
-            }}
-            className={provChoice === "nunavut" ? "cssChange" : null}
-            variants={pathVariants}
-            // fill="none"
-            stroke="#2D846D"
-            d="M181.372 93.12c-.957 2.896-2.272 4.132-.44 3.297m0 0c2.133 1.69.107 2.675 1.92 2.211m0 0c1.646-.411 1.369.458 2.023.629m0 0c-.237 1.656 2.176-1.927 2.145-1.991m0 0c.246-2.689-.123-.13-.493-3.012m0 0c-.362-1.538-1.325-1.354-2.268-2.562m0 0c.688 1.222-3.672-.735-2.887 1.428m0 0s0 0 0 0"
-          ></motion.path> */}
-          
-        
-     
-          
-          
-       
-          
-          
-          
-          
-        
-         
-          
-        
-          
-        
-          
-          
- 
       </motion.svg>
     </div>
   );
