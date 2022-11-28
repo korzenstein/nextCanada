@@ -6,6 +6,20 @@ import Title from "../components/Title";
 import Languages from "../components/Languages";
 import { useState } from "react";
 
+export const getStaticProps = async () => {
+  const res = await fetch(
+    "https://api.jsonbin.io/v3/b/62ce084a4d5b061b1b4afdff"
+  );
+  const data = await res.json();
+  const english = Object.entries(data.record.english);
+  const french = Object.entries(data.record.french);
+  const dataArrays = { english, french };
+
+  return {
+    props: { provData: dataArrays },
+  };
+};
+
 export default function Home({ provData }) {
   const [provChoice, setProvChoice] = useState("");
   const [flagToggle, setFlagToggle] = useState(false);
@@ -24,7 +38,6 @@ export default function Home({ provData }) {
     setLangChoice(language);
   };
 
-  
   return (
     <div>
       <Head>
@@ -35,35 +48,19 @@ export default function Home({ provData }) {
 
       <main className="main">
         <div className="wrapper ">
-          {provData !== undefined ? (
-            <>
-              <Facts {...{ provChoice, langChoice, provData }} />
-              <Languages {...{ languageHandler }} />
-              <Title {...{ provChoice, langChoice, provData }} />
-              <CanadaMap {...{ handleChoice, provChoice }} />
-              <Flags {...{ provChoice, langChoice, provData, flagHandler }} />
-            </>
-          ) : null}
+          <Facts {...{ provChoice, langChoice, provData }} />
+          <Languages {...{ languageHandler }} />
+          <Title {...{ provChoice, langChoice, provData }} />
+          <CanadaMap {...{ handleChoice, provChoice }} />
+          <Flags {...{ provChoice, langChoice, provData, flagHandler }} />
 
           <footer className="footer w-full border-t-2 absolute bottom-0 text-sm py-0.5">
-            <p className="text-center">designed + developed by Stephen K 2022</p>
+            <p className="text-center">
+              designed + developed by Stephen K 2022
+            </p>
           </footer>
         </div>
       </main>
     </div>
   );
-}
-
-export const getStaticProps = async () => {
-  const res = await fetch(
-    "https://api.jsonbin.io/v3/b/62ce084a4d5b061b1b4afdff"
-  );
-  const data = await res.json();
-  const english = Object.entries(data.record.english);
-  const french = Object.entries(data.record.french);
-  const dataArrays = { english, french };
-
-  return {
-    props: { provData: dataArrays },
-  };
 }
