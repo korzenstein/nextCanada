@@ -30,6 +30,7 @@ const Images = ({ provChoice, langChoice, provData, factChoice }) => {
                     <Image
                       width={200}
                       height={200}
+                      priority={true}
                       className="floraImage 
                       absolute 
                       pointer-events-none
